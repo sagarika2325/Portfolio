@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Portfolio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Homepage Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Hey! I am Sagarika!</h2>
+            <div class="title-loop">
+                <p class="typewrite">Masters in Applied Science (Data Science)</p>
+                <p class="typewrite">Data Analyst</p>
+                <p class="typewrite">Machine Learning Engineer</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+<section id="about" class="about">
+    <div class="about-container">
+        <div class="about-photo">
+            <img src="hey.jpeg" alt="Your Photo"> <!-- Replace with your photo -->
+        </div>
+        <div class="about-details">
+            <p><strong>Name:</strong> Sagarika Dubbaka</p>
+            <p><strong>Profile:</strong> Data Science Professional</p>
+            <p><strong>Email:</strong> sdubbaka1@hawk.iit.edu</p>
+            <p><strong>Phone:</strong> (312) 669-4383</p>
+        </div>
+        <div class="about-description">
+            <h4>About Me</h4>
+            <p>Data Science professional with 1.5+ years of experience in data analysis, machine learning, and creating data-driven insights. Skilled in Python, SQL, and data visualization tools like Tableau and Power BI. Passionate about solving problems and driving decisions through data. Currently seeking full-time opportunities in Data Analysis, Machine Learning, and related roles where I can apply my skills.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="skills" class="skills">
+    <div class="skills-container">
+        <!-- Left Side - Skills Categories -->
+        <div class="skills-categories">
+            <h3>Skills</h3>
+            <ul>
+                <li><button class="accordion active" onclick="displaySkills('programming')">Programming Languages</button></li>
+                <li><button class="accordion" onclick="displaySkills('data-analysis')">Data Analysis & Visualization</button></li>
+                <li><button class="accordion" onclick="displaySkills('ml-ai')">Machine Learning & AI</button></li>
+                <li><button class="accordion" onclick="displaySkills('databases')">Databases</button></li>
+                <li><button class="accordion" onclick="displaySkills('big-data')">Big Data & Distributed Computing</button></li>
+                <li><button class="accordion" onclick="displaySkills('tools')">Tools & Platforms</button></li>
+                <li><button class="accordion" onclick="displaySkills('agile')">Agile & Project Management</button></li>
+            </ul>
+        </div>
+
+        <!-- Right Side - Skill Details -->
+        <div class="skills-details">
+            <h4>Programming Languages</h4>
+            <ul>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>R</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script>
+    function displaySkills(category) {
+        // Hide all current skill sections
+        var skillSections = document.querySelectorAll('.skills-details');
+        for (var i = 0; i < skillSections.length; i++) {
+            skillSections[i].style.display = 'none';
+        }
+
+        // Remove 'active' class from all categories
+        var accButtons = document.getElementsByClassName("accordion");
+        for (var i = 0; i < accButtons.length; i++) {
+            accButtons[i].classList.remove("active");
+        }
+
+        // Show the selected category skills
+        if (category == 'programming') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Programming Languages</h4>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                    <li>R</li>
+                </ul>`;
+        } else if (category == 'data-analysis') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Data Analysis & Visualization</h4>
+                <ul>
+                    <li>Pandas</li>
+                    <li>Numpy</li>
+                    <li>Matplotlib</li>
+                    <li>Seaborn</li>
+                    <li>Tableau</li>
+                    <li>Power BI</li>
+                </ul>`;
+        } else if (category == 'ml-ai') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Machine Learning & AI</h4>
+                <ul>
+                    <li>Supervised & Unsupervised Learning</li>
+                    <li>NLP (Text Processing & Classification)</li>
+                    <li>XGBoost</li>
+                    <li>LightGBM</li>
+                    <li>PyTorch</li>
+                </ul>`;
+        } else if (category == 'databases') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Databases</h4>
+                <ul>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Advanced Excel (Pivot Tables, Data Cleaning, Automation)</li>
+                </ul>`;
+        } else if (category == 'big-data') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Big Data & Distributed Computing</h4>
+                <ul>
+                    <li>Apache Spark</li>
+                    <li>Hadoop</li>
+                    <li>Hive</li>
+                </ul>`;
+        } else if (category == 'tools') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Tools & Platforms</h4>
+                <ul>
+                    <li>Git/GitHub</li>
+                    <li>Jupyter Notebooks</li>
+                    <li>AWS (Cloud-based AI deployment)</li>
+                </ul>`;
+        } else if (category == 'agile') {
+            document.querySelector('.skills-details').innerHTML = `
+                <h4>Agile & Project Management</h4>
+                <ul>
+                    <li>Jira (Sprint Planning, Task Prioritization, Backlog Grooming)</li>
+                </ul>`;
+        }
+
+        // Show the selected category details
+        var selectedSection = document.querySelector('.skills-details');
+        selectedSection.style.display = 'block';
+
+        // Add 'active' class to the clicked button
+        var activeButton = document.querySelector('[onclick="displaySkills(\'' + category + '\')"]');
+        activeButton.classList.add("active");
+    }
+
+    // Default display for Programming Languages
+    displaySkills('programming');
+</script>
+
+
+
+<section id="projects" class="projects">
+    <div class="projects-container">
+        <h3>Projects</h3>
+
+        <!-- Data Science Intern - Label Master Project -->
+        <div class="project-container">
+            <div class="project-icon">
+                <i class="fas fa-briefcase"></i> <!-- Add Font Awesome icon -->
+            </div>
+            <h4>Data Science Intern – Label Master Company</h4>
+            <p><strong>Location:</strong> Chicago, IL | <strong>Jan 2025 – Present (Ongoing Project)</p>
+            <ul>
+                <li>Developing a data imputation framework using rule-based techniques and ML models (XGBoost, LightGBM) to infer missing job roles, management levels, and industry classifications.</li>
+                <li>Achieved a 91.19% match rate between rule-based and ML predictions, validating imputed data through clustering and Power BI visualizations.</li>
+                <li>Automating workforce segmentation and business intelligence insights, improving data quality and decision-making for large-scale workforce analytics.</li>
+            </ul>
+        </div>
+
+        <!-- Northern Trust Simulation - Agile Project -->
+        <div class="project-container">
+            <div class="project-icon">
+                <i class="fas fa-chart-line"></i> <!-- Add Font Awesome icon -->
+            </div>
+            <h4>Northern Trust Simulation - Agile Project</h4>
+            <p><strong>Tools Used:</strong> Jira, Python, SQL</p>
+            <ul>
+                <li>Managed Agile workflows with Jira for sprint planning and task prioritization.</li>
+                <li>Built a mock financial data pipeline using Python and SQL for data validation.</li>
+                <li>Delivered sprint summaries to align stakeholder priorities.</li>
+            </ul>
+        </div>
+
+        <!-- Retail Sales Data Analysis Project -->
+        <div class="project-container">
+            <div class="project-icon">
+                <i class="fas fa-chart-bar"></i> <!-- Add Font Awesome icon -->
+            </div>
+            <h4>Retail Sales Data Analysis</h4>
+            <p><strong>Tools Used:</strong> Tableau, Python, MS Excel</p>
+            <ul>
+                <li>Analyzed retail datasets to identify KPIs and high-growth regions for business expansion.</li>
+                <li>Preprocessed data using MS Excel and visualized trends with Tableau dashboards.</li>
+                <li>Delivered actionable insights to enhance decision-making processes.</li>
+            </ul>
+        </div>
+
+        <!-- Real-Estate Property Database Management System -->
+        <div class="project-container">
+            <div class="project-icon">
+                <i class="fas fa-building"></i> <!-- Add Font Awesome icon -->
+            </div>
+            <h4>Real-Estate Property Database Management System</h4>
+            <p><strong>Tools Used:</strong> Python, Flask, MySQL, HTML</p>
+            <ul>
+                <li>Built a web interface for managing real estate data using Flask.</li>
+                <li>Designed databases and automated mock data generation with MySQL and Python.</li>
+                <li>Optimized data retrieval with CRUD operations and OLAP queries.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
